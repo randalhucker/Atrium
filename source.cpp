@@ -34,5 +34,4 @@ int main()
         cout << endl;
     }
     cout << "To bad... until next time!";
-    return 0;
 }

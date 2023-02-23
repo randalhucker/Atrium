@@ -28,7 +28,7 @@ int main()
     while (ContinueGame == "y")
     {
         TakeTurn(Player);
-        cout << "Adventurer... do you want to continue? (y/n)" << endl;
+        cout << Player->getName() << "... do you want to continue? (y/n)" << endl;
         cout << "> ";
         cin >> ContinueGame;
         cout << endl;

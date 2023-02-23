@@ -19,6 +19,7 @@ protected:
     int Defense;
     int Level;
     int WeaponAmt;
+    int HealingAmt;
     Weapon *Weapons[NUM_WEAPONS];
     ClassChoice *Class;
 

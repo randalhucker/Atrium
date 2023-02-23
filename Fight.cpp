@@ -21,7 +21,7 @@ void showFightMenu()
 {
     cout << "Enter 1 to fight." << endl;
     cout << "Enter 2 to heal." << endl;
-    cout << "Enter 3 change weapons." << endl;
+    // cout << "Enter 3 change weapons." << endl;
     cout << "> ";
 }
 
@@ -33,7 +33,7 @@ void Fight(Player *User, Enemies *Enemy)
         printNewEnemy(Enemy);
         cout << "You have " << User->getHealth() << " points of health remaining." << endl
              << endl;
-        int WeaponChoice;
+        int WeaponChoice = 100;
         Weapon *SelectedWeapon;
 
         int FightDecision;
@@ -44,9 +44,9 @@ void Fight(Player *User, Enemies *Enemy)
         if (FightDecision == 1)
         {
             string Confirmation = "n";
-            while (Confirmation != "y")
+            while (WeaponChoice > User->getWeaponAmt() && WeaponChoice > 0)
             {
-                cout << "What weapon will you use against the Enemy?" << endl;
+                cout << "What weapon will you use against the " << Enemy->getName() << "?" << endl;
                 for (int i = 0; i < User->getWeaponAmt(); i++)
                 {
                     printNewWeapon(User->getWeapon(i), i);
@@ -55,34 +55,34 @@ void Fight(Player *User, Enemies *Enemy)
                 cin >> WeaponChoice;
                 cout << endl;
                 SelectedWeapon = User->getWeapon(WeaponChoice - 1);
-                cout << SelectedWeapon->getName() << " is the weapon you'd like to use? (y/n)" << endl;
-                cin >> Confirmation;
-                cout << endl;
+                // cout << SelectedWeapon->getName() << " is the weapon you'd like to use? (y/n)" << endl;
+                // cin >> Confirmation;
+                // cout << endl;
             }
             cout << "We fight!" << endl
                  << endl;
             srand(time(NULL));
-            int Speed = (rand() % 20 + 6);
-            if (Speed > 7)
+            int Speed = (rand() % 20 + 1);
+            if (Speed > 10)
             {
                 cout << "You attack first!" << endl;
                 int Damage = ((User->getAttack() + User->getClass()->getAttack() + SelectedWeapon->getAttack()) - Enemy->getDefense());
                 if (Damage >= 0)
                 {
-                    cout << "They took " << Damage << " points of damage!" << endl
+                    cout << "The " << Enemy->getName() << " took " << Damage << " points of damage!" << endl
                          << endl;
                     Enemy->setHealth(Enemy->getHealth() - Damage);
                 }
                 else
                 {
-                    cout << "They took no damage!" << endl;
+                    cout << "The " << Enemy->getName() << " took no damage!" << endl;
                     cout << "Not good!" << endl
                          << endl;
                 }
             }
             else
             {
-                cout << "The enemy attacks first!" << endl;
+                cout << "The " << Enemy->getName() << " attacks first!" << endl;
                 int Damage = (Enemy->getAttack() - (User->getDefense() + User->getClass()->getDefense() + SelectedWeapon->getDefense()));
                 if (Damage >= 0)
                 {

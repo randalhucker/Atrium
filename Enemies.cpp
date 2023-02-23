@@ -95,7 +95,7 @@ void printNewEnemy(Enemies *E)
 {
     cout << "|--------------------------|" << endl;
     cout << "|        Enemy Name       |" << endl;
-    cout << "|           Snake          |" << endl;
+    cout << "|           " << E->getName() << "         |" << endl;
     cout << "|       Enemy Attack      |" << endl;
     cout << "|            " << E->getAttack() << "             |" << endl;
     cout << "|       Enemy Defense     |" << endl;

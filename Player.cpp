@@ -15,6 +15,7 @@ Player::Player()
     Attack = 0;
     Defense = 0;
     WeaponAmt = 0;
+    HealingAmt = 0;
     Level = 1;
     Health = 100;
 }

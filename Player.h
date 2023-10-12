@@ -20,6 +20,7 @@ protected:
     int Level;
     int WeaponAmt;
     int HealingAmt;
+    int UpgradePoints;
     Weapon *Weapons[NUM_WEAPONS];
     ClassChoice *Class;
 
@@ -34,6 +35,7 @@ public:
     int getDefense();
     int getLevel();
     int getWeaponAmt();
+    int getUpgradePoints();
     Weapon *getWeapon(int Index);
     string getName();
     ClassChoice *getClass();
@@ -46,4 +48,5 @@ public:
     void setWeapon(Weapon *W, int Index);
     void setLevel(int L);
     void setWeaponAmt(int A);
+    void setUpgradePoints(int P);
 };

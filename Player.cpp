@@ -18,6 +18,7 @@ Player::Player()
     HealingAmt = 0;
     Level = 1;
     Health = 100;
+    UpgradePoints = 0;
 }
 
 // Fill constructor
@@ -30,6 +31,7 @@ Player::Player(string S, int A, int D, ClassChoice *C)
     WeaponAmt = 0;
     Level = 1;
     Health = 100;
+    UpgradePoints = 0;
 }
 
 // Destructor
@@ -85,6 +87,12 @@ int Player::getWeaponAmt()
     return (WeaponAmt);
 }
 
+// Returns an INT of the player's Upgrade Points
+int Player::getUpgradePoints()
+{
+    return (UpgradePoints);
+}
+
 // Sets the weapon slot 'Index' to 'Weapon'
 void Player::setWeapon(Weapon *W, int Index)
 {
@@ -121,7 +129,14 @@ void Player::setWeaponAmt(int A)
     WeaponAmt = A;
 }
 
+// Uses a STR for the player's new name
 void Player::setName(string S)
 {
     Name = S;
+}
+
+// Uses an INT for the player's new upgrade points
+void Player::setUpgradePoints(int P)
+{
+    UpgradePoints = P;
 }

@@ -22,7 +22,7 @@ void PrintIntro()
 void ShowClassMenu()
 {
     cout << endl;
-    cout << "These are the currently avaialbe classes:" << endl;
+    cout << "These are the currently available classes:" << endl;
     cout << "Enter 1 to be a barbarian (+5 Atk, +5 Def)." << endl;
     cout << "> ";
 }

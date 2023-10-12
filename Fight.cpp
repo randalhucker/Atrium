@@ -100,4 +100,5 @@ void Fight(Player *User, Enemies *Enemy)
     }
     cout << "You killed the " << Enemy->getName() << "!" << endl
          << endl;
+    User->setUpgradePoints(User->getUpgradePoints() + ( Enemy->getLevel() / 2 ));
 }
